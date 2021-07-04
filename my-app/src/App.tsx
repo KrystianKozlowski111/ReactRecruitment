@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Continent from './views/Continents/Continent';
+import ContinentDetails from './views/ContinentDetails/ContinentDetails';
 import HomePage from './views/HomePage/HomePage';
 import {
   BrowserRouter as Router,
@@ -15,12 +16,16 @@ function App() {
     <Router>
     
       <Switch>
+      <Route path="/continents/:code">
+          <ContinentDetails />
+        </Route>
         <Route path="/continents">
           <Continent />
         </Route>
         <Route path="/">
           <HomePage />
         </Route>
+      
         
       </Switch>
 

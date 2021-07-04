@@ -16,10 +16,12 @@ interface ContinentsData {
 
 const LIST_CONTINENTS = gql`
   {
-    continents {
-      code
-      name
-    }
+    continent(code:"AF") {
+        name
+        countries{
+          name
+        }       
+      }
   }
 `;
 
@@ -35,13 +37,7 @@ function Continent() {
     return (
 
         <>
-        
-        {data && data.continents.map(inventory => (
-          
-              <a href={'/continents/'+inventory.code}>
-                {inventory.code} {inventory.name}
-              </a>
-            ))}
+     
             
         </>
     );
